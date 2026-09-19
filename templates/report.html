@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Legal Metrology Inspection Certificate - #{{ inspection.id }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .report-cert {
+                box-shadow: none !important;
+                border: 2px solid #1a365d !important;
+                margin: 0 !important;
+                padding: 18px !important;
+                page-break-after: avoid;
+            }
+            .cert-dossier-grid, .audit-table, .cert-signature-block {
+                page-break-inside: avoid;
+            }
+        }
+        .report-cert {
+            border: 2.5px solid #1a365d;
+            border-radius: 8px;
+            padding: 28px;
+            background: #ffffff;
+            margin-top: 15px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+        .cert-header {
+            text-align: center;
+            border-bottom: 2px solid #cbd5e0;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .gov-crest-text {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #744210;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .gov-ministry-text {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #2d3748;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .cert-header h2 {
+            margin: 0 0 6px 0;
+            color: #1a365d;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .cert-header p {
+            margin: 0;
+            color: #4a5568;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .cert-dossier-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 22px;
+            font-size: 13px;
+        }
+        .cert-meta-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cert-meta-table td {
+            padding: 4px 6px;
+            vertical-align: top;
+        }
+        .cert-meta-table td.meta-label {
+            font-weight: 700;
+            color: #4a5568;
+            width: 38%;
+        }
+        .cert-meta-table td.meta-val {
+            color: #1a202c;
+        }
+        .cert-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #cbd5e0;
+            border-radius: 6px;
+            padding: 8px;
+            background: #ffffff;
+            text-align: center;
+        }
+        .cert-image-container img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .cert-image-caption {
+            font-size: 11px;
+            color: #718096;
+            margin-top: 6px;
+            font-style: italic;
+        }
+        .cert-summary-box {
+            background: #edf2f7;
+            border-left: 4px solid #3182ce;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        .cert-signature-block {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px dashed #cbd5e0;
+        }
+        .sig-box {
+            text-align: center;
+        }
+        .sig-line {
+            border-bottom: 1px solid #4a5568;
+            height: 38px;
+            margin-bottom: 6px;
+        }
+        .sig-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        .sig-sub {
+            font-size: 11px;
+            color: #718096;
+        }
+        .statutory-notice-box {
+            background: #fffaf0;
+            border: 1px solid #feebc8;
+            border-left: 4px solid #dd6b20;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-top: 22px;
+            font-size: 12px;
+            color: #744210;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="no-print" style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; background: #ffffff; padding: 12px 20px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="/static/img/scan2sure_logo.png" alt="scan2sure" style="width: 32px; height: 32px; border-radius: 6px;">
+            <div>
+                <strong style="font-size: 15px; color: #1e293b; display: block; line-height: 1.2;">scan2sure</strong>
+                <span style="font-size: 11px; color: #64748b; font-weight: 600;">SCAN &bull; VERIFY &bull; TRUST</span>
+            </div>
+            <a href="/" class="btn-review-modal" style="margin-left: 15px; text-decoration: none; padding: 6px 12px; font-size: 13px; background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600;">&larr; Back to Inspection Console</a>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <a href="/api/inspection/{{ inspection.id }}/json" class="btn-review-modal" style="text-decoration: none; padding: 6px 14px; font-size: 13px; background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600;" target="_blank">📥 Export JSON</a>
+            <button onclick="window.print()" class="btn-audit-primary" style="padding: 6px 16px; font-size: 13px; border-radius: 6px; border: none; cursor: pointer; background: #2563eb; color: #ffffff; font-weight: 600;">🖨️ Print Statutory Certificate</button>
+        </div>
+    </div>
+
+    <div class="report-cert">
+        
+        <!-- OFFICIAL EMBLEM & CERTIFICATE HEADER -->
+        <div class="cert-header">
+            <div class="gov-crest-text">GOVERNMENT OF INDIA</div>
+            <div class="gov-ministry-text">MINISTRY OF CONSUMER AFFAIRS, FOOD &amp; PUBLIC DISTRIBUTION &bull; DIRECTORATE OF LEGAL METROLOGY</div>
+            <h2>STATUTORY COMPLIANCE INSPECTION REPORT</h2>
+            <p>Verification under Rule 32 of Legal Metrology (Packaged Commodities) Rules, 2011 &amp; Section 15 of Legal Metrology Act, 2009</p>
+        </div>
+
+        <!-- PRODUCT & INSPECTION METADATA DOSSIER -->
+        <div class="cert-dossier-grid">
+            <div>
+                <table class="cert-meta-table">
+                    <tr>
+                        <td class="meta-label">Inspection Certificate ID:</td>
+                        <td class="meta-val"><code>LM/PCR2011/{{ inspection.id }}</code></td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Date &amp; Time of Audit:</td>
+                        <td class="meta-val">{{ inspection.created_at }}</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Commodity Name:</td>
+                        <td class="meta-val"><strong>{{ inspection.product_name }}</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Commodity Category:</td>
+                        <td class="meta-val">{{ (inspection.compliance.commodity_category | capitalize) if inspection.compliance.commodity_category else 'General Packaged Commodity' }}</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Input Source / Evidence:</td>
+                        <td class="meta-val">{{ inspection.input_source | capitalize }} Mode</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Extraction Engine:</td>
+                        <td class="meta-val">{{ inspection.engine_used }} ({% if inspection.confidence %}{{ "%.1f"|format(inspection.confidence) }}% conf.{% else %}Unmeasured / Manual Verification{% endif %})</td>
+                    </tr>
+                    <tr>
+                        <td class="meta-label">Statutory Inspection Finding:</td>
+                        <td class="meta-val">
+                            <span class="status-badge badge-{{ inspection.overall_status.lower().replace('_', '').replace('-', '').replace(' ', '') }}">
+                                {% if inspection.overall_status == 'COMPLIANT' %}
+                                    ✅ COMPLIANT
+                                {% elif inspection.overall_status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}
+                                    ❌ NON-COMPLIANT
+                                {% elif inspection.overall_status == 'REQUIRES_REVIEW' %}
+                                    🔍 REQUIRES REVIEW
+                                {% else %}
+                                    {{ inspection.overall_status }}
+                                {% endif %}
+                                ({{ inspection.compliance_score }}%)
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- PRODUCT EVIDENCE THUMBNAIL -->
+            <div class="cert-image-container">
+                {% if inspection.image_filenames and inspection.image_filenames|length > 1 %}
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center;">
+                        {% for img_fn in inspection.image_filenames %}
+                            <div style="text-align: center;">
+                                <img src="/uploads/{{ img_fn }}" alt="Packaging View {{ loop.index }}" style="max-height: 100px; max-width: 100px; object-fit: contain; border: 1px solid #cbd5e0; border-radius: 4px; padding: 2px;">
+                                <div style="font-size: 10px; color: #4a5568; font-weight: bold; margin-top: 2px;">[Image {{ loop.index }}]</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="cert-image-caption">Packaging Views Evidence ({{ inspection.image_filenames|length }} views)</div>
+                {% elif inspection.image_filename %}
+                    <img src="/uploads/{{ inspection.image_filename }}" alt="Packaging Evidence Thumbnail">
+                    <div class="cert-image-caption">Principal Display Panel (PDP) Evidence</div>
+                {% else %}
+                    <div style="font-size: 12px; color: #718096; padding: 30px 10px;">
+                        📄 Digital / E-Commerce Text Audit Record
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- EXECUTIVE SUMMARY & TRANSPARENCY STATEMENT -->
+        <div class="cert-summary-box">
+            <div style="font-weight: 700; color: #1a365d; margin-bottom: 4px;">
+                Statutory Assessment Summary:
+            </div>
+            <div>
+                {% if inspection.compliance.score_explanation and inspection.compliance.score_explanation.summary %}
+                    {{ inspection.compliance.score_explanation.summary }}
+                {% else %}
+                    Packaging inspection evaluated across 10 statutory declaration requirements under PCR 2011.
+                {% endif %}
+            </div>
+            <div style="margin-top: 8px; font-size: 12px; color: #4a5568;">
+                <strong>Evaluation Metrics:</strong>
+                Passed / Compliant: <strong>{{ inspection.compliance.passed_count }}</strong> &bull;
+                Confirmed Violations: <strong>{{ inspection.compliance.failed_count }}</strong> &bull;
+                Inspector Review Required: <strong>{{ inspection.compliance.warning_count }}</strong> &bull;
+                Not Detected: <strong>{{ inspection.compliance.not_detected_count }}</strong> &bull;
+                Statutory Exemptions: <strong>{{ inspection.compliance.not_applicable_count }}</strong>
+            </div>
+            <div style="margin-top: 4px; font-size: 11px; color: #718096; font-style: italic;">
+                Transparency Note: The Compliance Score ({{ inspection.compliance_score }}%) is a weighted statutory compliance index. Missing or unreadable declarations require physical verification and are not treated as confirmed violations.
+            </div>
+        </div>
+
+        <!-- FULL STATUTORY DECLARATION AUDIT TABLE (7 COLUMNS) -->
+        <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 16px; color: #1a365d;">
+            1. Statutory Declaration Audit Breakdown
+        </h3>
+        <table class="audit-table" style="margin-bottom: 20px; font-size: 12.5px;">
+            <thead>
+                <tr>
+                    <th style="width: 17%;">Statutory Requirement</th>
+                    <th style="width: 12%;">Rule Reference</th>
+                    <th style="width: 20%;">Extracted Evidence &amp; Value</th>
+                    <th style="width: 13%;">Confidence &amp; Source</th>
+                    <th style="width: 14%;">Audit Status</th>
+                    <th style="width: 13%;">Inspector Finding</th>
+                    <th style="width: 11%;">Recommended Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in inspection.compliance.audit_table %}
+                    <tr class="status-row-{{ row.status.lower().replace('_', '').replace('-', '').replace(' ', '') }}">
+                        <td>
+                            <strong>{{ row.requirement }}</strong>
+                            <div style="font-size: 10.5px; color: #718096;">ID: {{ row.rule_id }}</div>
+                        </td>
+                        <td>
+                            <code>{{ row.rule }}</code>
+                            <div style="font-size: 10px; color: #718096;">{{ row.category }}</div>
+                        </td>
+                        <td>
+                            {% if row.extracted_value %}
+                                <div style="font-weight: 700; color: #1a202c; margin-bottom: 2px;">{{ row.extracted_value }}</div>
+                            {% endif %}
+                            <div style="font-size: 11px; color: #4a5568;"><small>{{ row.extracted_evidence }}</small></div>
+                            {% if row.has_conflict %}
+                                <div style="color: #c53030; font-size: 10.5px; font-weight: 600; margin-top: 2px;">⚠️ {{ row.conflict_detail }}</div>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <div style="font-size: 11px; color: #4a5568;">
+                                {% if row.extraction_source %}
+                                    <div>{{ row.extraction_source }}</div>
+                                {% endif %}
+                                {% if row.confidence is not none %}
+                                    <div style="font-weight: 600; color: #2d3748;">{{ "%.1f"|format(row.confidence) }}% conf.</div>
+                                {% else %}
+                                    <div style="color: #718096;">Unmeasured</div>
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td>
+                            <span class="status-badge badge-{{ row.status.lower().replace('_', '').replace('-', '').replace(' ', '') }}">
+                                {% if row.status == 'COMPLIANT' %}
+                                    ✅ COMPLIANT
+                                {% elif row.status in ['NON_COMPLIANT', 'NON-COMPLIANT'] %}
+                                    ❌ NON-COMPLIANT
+                                {% elif row.status == 'REQUIRES_REVIEW' %}
+                                    ⚠️ REQUIRES_REVIEW
+                                {% elif row.status == 'NOT_DETECTED' %}
+                                    🔍 NOT_DETECTED
+                                {% elif row.status == 'NOT_APPLICABLE' %}
+                                    ⚪ NOT_APPLICABLE
+                                {% else %}
+                                    {{ row.status }}
+                                {% endif %}
+                            </span>
+                        </td>
+                        <td>
+                            <div style="font-size: 11.5px; line-height: 1.35;">{{ row.reason }}</div>
+                        </td>
+                        <td>
+                            <div style="font-size: 11px; line-height: 1.3; color: #2b6cb0;">{{ row.recommended_action }}</div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- CATEGORIZED FINDINGS & ENFORCEMENT DIRECTIVES -->
+        <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 16px; color: #1a365d;">
+            2. Categorized Enforcement Directives &amp; Action Items
+        </h3>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 6px; font-size: 13px;">
+            {% set has_fails = false %}
+            {% set has_reviews = false %}
+            {% set has_exempt = false %}
+
+            <!-- VIOLATIONS -->
+            <div style="margin-bottom: 12px;">
+                <strong style="color: #c53030;">A. Confirmed Statutory Violations:</strong>
+                <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+                    {% for row in inspection.compliance.audit_table %}
+                        {% if row.status in ['NON_COMPLIANT', 'NON-COMPLIANT'] %}
+                            {% set has_fails = true %}
+                            <li>
+                                <strong>{{ row.rule }} ({{ row.requirement }}):</strong> {{ row.reason }}
+                                &rarr; <span style="color: #c53030;">{{ row.recommended_action }}</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if not has_fails %}
+                        <li style="color: #276749;">Nil confirmed statutory violations detected.</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <!-- REVIEWS / NOT DETECTED -->
+            <div style="margin-bottom: 12px;">
+                <strong style="color: #c05621;">B. Declarations Requiring Physical Verification / Review:</strong>
+                <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+                    {% for row in inspection.compliance.audit_table %}
+                        {% if row.status in ['REQUIRES_REVIEW', 'NOT_DETECTED'] %}
+                            {% set has_reviews = true %}
+                            <li>
+                                <strong>{{ row.rule }} ({{ row.requirement }}):</strong> {{ row.reason }}
+                                &rarr; <span style="color: #c05621;">{{ row.recommended_action }}</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if not has_reviews %}
+                        <li style="color: #276749;">All evaluated declarations have been verified with high confidence.</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <!-- EXEMPTIONS -->
+            <div>
+                <strong style="color: #4a5568;">C. Statutory Exemptions Recognized:</strong>
+                <ul style="margin: 4px 0 0 0; padding-left: 20px;">
+                    {% for row in inspection.compliance.audit_table %}
+                        {% if row.status == 'NOT_APPLICABLE' %}
+                            {% set has_exempt = true %}
+                            <li>
+                                <strong>{{ row.rule }} ({{ row.requirement }}):</strong> {{ row.reason }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if not has_exempt %}
+                        <li style="color: #718096;">No statutory exemptions applied; standard packaged commodity declarations evaluated.</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- STATUTORY AUTHORITY & NOTICE CLAUSE -->
+        <div class="statutory-notice-box">
+            <strong>STATUTORY AUTHORITY &amp; LEGAL NOTICE:</strong>
+            This inspection report is prepared pursuant to inspection powers conferred under Section 15 of the Legal Metrology Act, 2009 read with Rule 32 of the Legal Metrology (Packaged Commodities) Rules, 2011. Any manufacturing, pre-packing, importing, or retail distribution of packaged commodities with non-conforming statutory declarations constitutes an offence punishable under Section 36(1) of the Legal Metrology Act, 2009 with statutory penalties up to &#x20B9;25,000 for first offence, &#x20B9;50,000 for second offence, and up to &#x20B9;1,00,000 or imprisonment for subsequent offences.
+        </div>
+
+        <!-- OFFICIAL SIGNATURE & SEAL BLOCK -->
+        <div class="cert-signature-block">
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-title">Inspecting Enforcement Officer</div>
+                <div class="sig-sub">Name &amp; Designation</div>
+            </div>
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-title">Zonal / District Enforcement Office</div>
+                <div class="sig-sub">Jurisdiction &amp; Station</div>
+            </div>
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                <div class="sig-title">Authorized Seal &amp; Endorsement</div>
+                <div class="sig-sub">Date &amp; Official Stamp</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

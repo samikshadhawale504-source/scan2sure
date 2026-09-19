@@ -1,0 +1,30 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.class
+
+# Environment Variables & Secrets
+.env
+*.env
+.env.local
+.env.*.local
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Database
+data/*.db
+data/*.sqlite3
+
+# Benchmark outputs
+benchmark_output/
+
+# Runtime uploads and generated files
+uploads/
+benchmark_output_user/
+benchmark_output/
+
+# Local test/runtime files
+*.log

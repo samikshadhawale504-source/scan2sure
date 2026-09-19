@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection Audit Log - scan2sure | Legal Metrology SIH26034</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="scan2sure-app">
+<div class="app-layout">
+    <aside class="app-sidebar">
+        <div class="sidebar-brand">
+            <img src="/static/img/scan2sure_logo.png" alt="scan2sure logo" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-title">scan2sure</span>
+                <span class="brand-tagline">SCAN &bull; VERIFY &bull; TRUST</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">MAIN NAVIGATION</div>
+            <a href="/" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="/ecommerce" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span>E-Commerce Audit</span>
+            </a>
+            <a href="/history" class="nav-item active">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>History / Audit Log</span>
+            </a>
+            <a href="/certificates" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Certificates</span>
+            </a>
+            <a href="/analytics" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Analytics</span>
+            </a>
+
+            <div class="nav-section-title">SYSTEM & COMPLIANCE</div>
+            <a href="/settings" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Settings & Engine</span>
+            </a>
+            <a href="/help" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>Legal Rules & Help</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-status-box">
+            <div class="status-indicator-dot"></div>
+            <div>
+                <div class="status-box-title">System Status: Active</div>
+                <div class="status-box-sub">Legal Metrology Rules 2011</div>
+            </div>
+        </div>
+    </aside>
+    
+    <div class="app-main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <h1 class="header-system-title">Legal Metrology Compliance System</h1>
+                <p class="header-system-sub">AI-Powered Inspection of Packaged Commodities</p>
+            </div>
+            <div class="header-right">
+                <span class="badge-sih">SIH26034</span>
+                <div class="inspector-profile">
+                    <div class="avatar-circle">IN</div>
+                    <div class="inspector-details">
+                        <span class="inspector-name">Inspector</span>
+                        <span class="inspector-role">Legal Metrology Officer</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <div class="content-header-row">
+                <div>
+                    <h2 class="section-title">Inspection Audit Log</h2>
+                    <p class="section-subtitle">Historical registry of packaged commodity statutory compliance inspections</p>
+                </div>
+                <div class="header-actions">
+                    <a href="/" class="btn-primary-action">+ New Product Scan</a>
+                </div>
+            </div>
+
+            <div class="unified-card">
+                <div class="card-header-flex">
+                    <h3 style="font-size:16px; font-weight:700; color:#1e293b;">Statutory Inspection Records ({{ inspections | length }})</h3>
+                    <div class="filter-pills" style="display:flex; gap:8px;">
+                        <a href="/history" class="filter-pill {{ 'active' if not request.args.get('status') else '' }}" style="text-decoration:none; padding:5px 12px; font-size:12px; border-radius:20px; background:{{ '#2563eb' if not request.args.get('status') else '#f1f5f9' }}; color:{{ '#ffffff' if not request.args.get('status') else '#475569' }}; font-weight:600;">All ({{ inspections | length }})</a>
+                        <a href="/history?status=COMPLIANT" class="filter-pill {{ 'active' if request.args.get('status') == 'COMPLIANT' else '' }}" style="text-decoration:none; padding:5px 12px; font-size:12px; border-radius:20px; background:{{ '#2563eb' if request.args.get('status') == 'COMPLIANT' else '#f1f5f9' }}; color:{{ '#ffffff' if request.args.get('status') == 'COMPLIANT' else '#475569' }}; font-weight:600;">Compliant</a>
+                        <a href="/history?status=NON-COMPLIANT" class="filter-pill {{ 'active' if request.args.get('status') == 'NON-COMPLIANT' else '' }}" style="text-decoration:none; padding:5px 12px; font-size:12px; border-radius:20px; background:{{ '#2563eb' if request.args.get('status') == 'NON-COMPLIANT' else '#f1f5f9' }}; color:{{ '#ffffff' if request.args.get('status') == 'NON-COMPLIANT' else '#475569' }}; font-weight:600;">Non-Compliant</a>
+                        <a href="/history?status=REQUIRES_REVIEW" class="filter-pill {{ 'active' if request.args.get('status') == 'REQUIRES_REVIEW' else '' }}" style="text-decoration:none; padding:5px 12px; font-size:12px; border-radius:20px; background:{{ '#2563eb' if request.args.get('status') == 'REQUIRES_REVIEW' else '#f1f5f9' }}; color:{{ '#ffffff' if request.args.get('status') == 'REQUIRES_REVIEW' else '#475569' }}; font-weight:600;">Requires Review</a>
+                    </div>
+                </div>
+
+                {% if not inspections %}
+                    <div style="text-align:center; padding: 48px 24px;">
+                        <div style="font-size:36px; margin-bottom:12px; color:#94a3b8;">&empty;</div>
+                        <h4 style="font-size:16px; color:#1e293b; margin-bottom:6px;">No inspection records found in the database.</h4>
+                        <p style="font-size:13px; color:#64748b; margin-bottom:20px;">Conduct your first inspection scan using the Dashboard Image Scanner or E-Commerce audit mode.</p>
+                        <a href="/" class="btn-primary-action">Start First Inspection</a>
+                    </div>
+                {% else %}
+                    <div class="table-responsive" style="margin-top: 16px;">
+                        <table class="audit-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date / Time</th>
+                                    <th>Commodity Name</th>
+                                    <th>Input Mode</th>
+                                    <th>Engine Used</th>
+                                    <th>Compliance Score</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in inspections %}
+                                    <tr class="status-row-{{ item.overall_status.lower().replace('_', '').replace(' ', '').replace('-', '') }}">
+                                        <td><code>{{ item.id }}</code></td>
+                                        <td><small>{{ item.created_at }}</small></td>
+                                        <td><strong>{{ item.product_name }}</strong></td>
+                                        <td><span class="badge-chip">{{ item.input_source | capitalize }}</span></td>
+                                        <td><small>{{ item.engine_used }}</small></td>
+                                        <td><strong>{{ item.compliance_score }}%</strong></td>
+                                        <td>
+                                            <span class="status-badge badge-{{ item.overall_status.lower().replace('_', '').replace(' ', '').replace('-', '') }}">
+                                                {% if item.overall_status == 'COMPLIANT' %}
+                                                    &check; COMPLIANT
+                                                {% elif item.overall_status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}
+                                                    &cross; NON-COMPLIANT
+                                                {% elif item.overall_status == 'REQUIRES_REVIEW' %}
+                                                    &#128269; REQUIRES REVIEW
+                                                {% elif item.overall_status == 'PARTIALLY COMPLIANT' %}
+                                                    &#9888; PARTIAL
+                                                {% else %}
+                                                    {{ item.overall_status }}
+                                                {% endif %}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div style="display:flex; gap:6px;">
+                                                <a href="/inspection/{{ item.id }}" class="btn-review-modal" style="text-decoration:none; padding:4px 10px; font-size:12px; border-radius:6px; background:#f1f5f9; color:#1e293b; border:1px solid #cbd5e1; font-weight:600;">View</a>
+                                                <a href="/inspection/{{ item.id }}/report" class="btn-audit-primary" style="text-decoration:none; padding:4px 10px; font-size:12px; border-radius:6px; background:#2563eb; color:#ffffff; font-weight:600;">Certificate</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    &copy; 2026 <strong>scan2sure</strong> | <strong>SIH26034</strong> &ndash; Legal Metrology Compliance System
+                </div>
+                <div class="footer-tagline">
+                    SCAN &bull; VERIFY &bull; TRUST
+                </div>
+                <div class="footer-right">
+                    Directorate of Legal Metrology &bull; Ministry of Consumer Affairs
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

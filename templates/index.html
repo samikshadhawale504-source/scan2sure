@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scan2sure &ndash; Legal Metrology Compliance System | SIH26034</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="scan2sure-app">
+<div class="app-layout">
+
+    <!-- FIXED 240px SIDEBAR -->
+    <aside class="app-sidebar">
+        <div class="sidebar-brand">
+            <img src="/static/img/scan2sure_logo.png" alt="scan2sure logo" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-title">scan2sure</span>
+                <span class="brand-tagline">SCAN &bull; VERIFY &bull; TRUST</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">MAIN NAVIGATION</div>
+            <a href="/" class="nav-item active">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="/ecommerce" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span>E-Commerce Audit</span>
+            </a>
+            <a href="/history" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>History / Audit Log</span>
+            </a>
+            <a href="/certificates" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Certificates</span>
+            </a>
+            <a href="/analytics" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Analytics</span>
+            </a>
+
+            <div class="nav-section-title">SYSTEM &amp; COMPLIANCE</div>
+            <a href="/settings" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Settings &amp; Engine</span>
+            </a>
+            <a href="/help" class="nav-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>Legal Rules &amp; Help</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-status-box">
+            <div class="status-indicator-dot"></div>
+            <div>
+                <div class="status-box-title">System Status: Active</div>
+                <div class="status-box-sub">Legal Metrology Rules 2011</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN APP CONTENT -->
+    <div class="app-main-content">
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1 class="header-system-title">Legal Metrology Compliance System</h1>
+                <p class="header-system-sub">AI-Powered Inspection of Packaged Commodities</p>
+            </div>
+            <div class="header-right">
+                <span class="badge-sih">SIH26034</span>
+                <div class="inspector-profile">
+                    <div class="avatar-circle">IN</div>
+                    <div class="inspector-details">
+                        <span class="inspector-name">Inspector</span>
+                        <span class="inspector-role">Legal Metrology Officer</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGE CONTENT CONTAINER -->
+        <main class="page-content">
+
+            <!-- HERO BANNER -->
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h2 class="hero-title">Inspect with Confidence</h2>
+                    <p class="hero-sub">
+                        AI-Powered Legal Metrology Compliance Inspection for Packaged Commodities under Legal Metrology (Packaged Commodities) Rules, 2011.
+                    </p>
+                    <div class="hero-badges">
+                        <div class="hero-badge-pill">
+                            <span>&#128737;</span> Accurate AI Extraction
+                        </div>
+                        <div class="hero-badge-pill">
+                            <span>&#9878;</span> Complete Compliance Check
+                        </div>
+                        <div class="hero-badge-pill">
+                            <span>&#127760;</span> Safer Marketplace
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCAN MESSAGES / ERRORS -->
+            {% if scan_message %}
+                <div class="alert {% if 'Error' in scan_message or 'Warning' in scan_message %}alert-danger{% else %}alert-success{% endif %}" style="margin-bottom: 20px;">
+                    {{ scan_message }}
+                </div>
+            {% endif %}
+            {% if scan_error %}
+                <div class="alert alert-danger" style="margin-bottom: 20px;">
+                    {{ scan_error }}
+                </div>
+            {% endif %}
+
+            <!-- SECTION 1: UPLOAD PRODUCT IMAGES -->
+            <section class="unified-card upload-section-card">
+                <div class="section-heading-box">
+                    <h3 class="section-step-title">1. Upload Packaged Commodity Label / Product Images</h3>
+                    <p class="section-step-desc">
+                        Upload clear images of the front, back, MRP declaration, and side panels of the packaged commodity
+                    </p>
+                </div>
+
+                <form id="multi_upload_form" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="extract">
+                    <input type="hidden" name="engine" value="auto">
+
+                    <div class="upload-grid-layout">
+                        <!-- Left Dropzone Box -->
+                        <div class="dropzone-box" id="drop_zone" onclick="document.getElementById('product_images_input').click()">
+                            <div class="dropzone-icon">
+                                <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <div class="dropzone-main-text">Drag &amp; drop packaged commodity images</div>
+                            <div class="dropzone-sub-text">or click to browse from device (JPG, PNG, WEBP, BMP up to 10MB each)</div>
+                            <button type="button" class="btn-choose-file">Choose Images</button>
+                            <input
+                                type="file"
+                                id="product_images_input"
+                                name="product_images"
+                                accept=".jpg,.jpeg,.png,.webp,.bmp,image/jpeg,image/png,image/webp,image/bmp"
+                                multiple
+                                style="display: none;"
+                            >
+                        </div>
+
+                        <!-- Right Uploaded Preview Grid -->
+                        <div class="uploaded-previews-container">
+                            <div class="previews-header">
+                                <span class="previews-title">Uploaded Images (<span id="uploaded_count_text">{{ image_filenames|length if image_filenames else '0' }}</span>/10)</span>
+                                <span class="previews-hint">Different views of one physical package</span>
+                            </div>
+
+                            <div class="thumbnails-flex-row" id="staged_grid">
+                                {% if image_filenames %}
+                                    {% for img_fn in image_filenames %}
+                                        <div class="thumbnail-preview-card">
+                                            <div class="thumb-img-wrap">
+                                                <img src="/uploads/{{ img_fn }}" alt="View {{ loop.index }}">
+                                                <span class="thumb-index-badge">[{{ loop.index }}]</span>
+                                            </div>
+                                            <div class="thumb-info">
+                                                <div class="thumb-name" title="{{ img_fn }}">{{ img_fn }}</div>
+                                                <div class="thumb-size">Uploaded view</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="previews-empty-state" id="empty_previews_msg">
+                                        <div class="empty-icon-sm">&#128247;</div>
+                                        <p>No images selected yet. Choose front, back, and MRP views above.</p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Overlay -->
+                    <div id="upload_spinner" class="upload-spinner-overlay" style="display:none; margin-top:15px; padding:15px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; text-align:center;">
+                        <div style="font-size: 15px; font-weight:700; color:#1e40af; margin-bottom: 4px;">&#128260; Processing Packaging Views...</div>
+                        <div style="font-size: 13px; color: #1e3a8a;">Running multi-image hybrid AI extraction (Mistral OCR &rarr; Gemini &rarr; Local). Please wait...</div>
+                    </div>
+
+                    <!-- Extract Information Button -->
+                    <div style="margin-top: 18px;">
+                        <button type="submit" id="btn_submit_extract" class="btn-extract-primary">
+                            &#128269; Extract Information
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- SECTION 2: EXTRACTION PROGRESS STEPPER -->
+            <section class="unified-card stepper-card">
+                <div class="section-heading-box">
+                    <h3 class="section-step-title">2. Extraction Progress</h3>
+                </div>
+
+                {% set is_extracted = fields or (extraction_meta and extraction_meta.images_processed > 0) %}
+                {% set is_audited = result is defined and result is not none %}
+
+                <div class="stepper-horizontal">
+                    <!-- Step 1: Processing Images -->
+                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% else %}active{% endif %}">
+                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}1{% endif %}</div>
+                        <div class="stepper-text">Processing Images</div>
+                    </div>
+
+                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                    <!-- Step 2: Extracting Text -->
+                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}2{% endif %}</div>
+                        <div class="stepper-text">Extracting Text</div>
+                    </div>
+
+                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                    <!-- Step 3: Combining Information -->
+                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}3{% endif %}</div>
+                        <div class="stepper-text">Combining Information</div>
+                    </div>
+
+                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                    <!-- Step 4: Calculating USP -->
+                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}4{% endif %}</div>
+                        <div class="stepper-text">Calculating USP</div>
+                    </div>
+
+                    <div class="stepper-divider {% if is_audited %}completed{% endif %}"></div>
+
+                    <!-- Step 5: Running Compliance Checks -->
+                    <div class="stepper-step {% if is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                        <div class="stepper-circle">{% if is_audited %}&#10003;{% else %}5{% endif %}</div>
+                        <div class="stepper-text">Running Compliance Checks</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MACROS FOR PROVENANCE & CONFLICT RENDERING -->
+            {% macro render_field_meta(fd) %}
+                {% if fd %}
+                    <div class="field-card-meta">
+                        {% if fd.source_images and fd.source_images|length > 0 %}
+                            <span class="source-img-badge">&#128247; {{ fd.source_images | join(', ') }}</span>
+                        {% elif fd.source_image %}
+                            <span class="source-img-badge">&#128247; {{ fd.source_image }}</span>
+                        {% endif %}
+
+                        {% if fd.source == 'Mistral OCR' or 'Mistral' in fd.source %}
+                            <span class="source-tag source-tag-mistral">Mistral OCR</span>
+                        {% elif fd.source == 'Gemini Vision AI' or 'Gemini' in fd.source %}
+                            <span class="source-tag source-tag-gemini">Gemini Vision AI</span>
+                        {% elif fd.source == 'Local OCR' %}
+                            <span class="source-tag source-tag-ocr">Local OCR</span>
+                        {% elif 'Refined' in fd.source or 'User' in fd.source or 'Inspector' in fd.source %}
+                            <span class="source-tag source-tag-user">User Verified</span>
+                        {% elif 'Auto-Calculated' in fd.source %}
+                            <span class="source-tag source-tag-calc">Auto-Calculated</span>
+                        {% else %}
+                            <span class="source-tag">{{ fd.source }}</span>
+                        {% endif %}
+
+                        {% if fd.confidence is not none %}
+                            {% if fd.confidence < 70.0 %}
+                                <span class="conf-pill conf-pill-low">&#9888; {{ "%.1f"|format(fd.confidence) }}%</span>
+                            {% else %}
+                                <span class="conf-pill conf-pill-high">&check; {{ "%.1f"|format(fd.confidence) }}%</span>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if fd.has_conflict %}
+                            <span class="conflict-badge">&#9888; Conflict</span>
+                        {% elif fd.confidence is not none and fd.confidence < 70.0 %}
+                            <span class="warn-chip">&#128269; Review</span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endmacro %}
+
+            {% macro render_field_card(label, field_key, custom_val=none, custom_fd=none, hint=none) %}
+                {% set fd = custom_fd or fields_detail.get(field_key) %}
+                {% set val = custom_val if custom_val is not none else (fields.get(field_key) or (fd.value if fd else '')) %}
+                <div class="field-card">
+                    <div class="field-card-header">
+                        <span class="field-card-label">{{ label }}</span>
+                        {{ render_field_meta(fd) }}
+                    </div>
+                    <div class="field-card-value">
+                        {{ val or '—' }}
+                        {% if hint %}
+                            <span class="field-card-hint">{{ hint }}</span>
+                        {% endif %}
+                    </div>
+                    {% if fd and fd.evidence and not fd.has_conflict %}
+                        <details class="evidence-collapsible">
+                            <summary class="evidence-summary">&#128065; View Evidence</summary>
+                            <div class="evidence-body">{{ fd.evidence }}</div>
+                        </details>
+                    {% endif %}
+                    {% if fd and fd.has_conflict %}
+                        <div class="conflict-detail-box">
+                            <div class="conflict-header">&#9888; Conflicting Declarations Across Packaging Views:</div>
+                            <div style="margin-bottom: 4px;">{{ fd.conflict_detail or "Conflicting information detected on different images." }}</div>
+                            {% if fd.conflicting_candidates %}
+                                <div class="conflict-candidates-list">
+                                    {% for cand in fd.conflicting_candidates %}
+                                        <span class="conflict-cand-badge"><strong>{{ cand.image_label }}:</strong> "{{ cand.value }}" ({{ cand.engine }})</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="conflict-hint">Inspector action: Examine packaging views above and enter verified declaration before auditing.</div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endmacro %}
+
+            <!-- SECTION 3: EXTRACTED PRODUCT INFORMATION -->
+            <section class="unified-card">
+                <div class="section-heading-box">
+                    <h3 class="section-step-title">3. Extracted Product Information (Unified Record)</h3>
+                    <p class="section-step-desc">
+                        Unified statutory declaration merged across packaging views under PCR 2011 Rule 6
+                    </p>
+                </div>
+
+                <div class="unified-content-grid">
+                    <!-- Left: Two-Column Structured Field Display -->
+                    <div class="product-fields-container">
+                        <div class="fields-two-column">
+                            <!-- Left Column -->
+                            <div class="fields-subcolumn">
+                                {{ render_field_card('Product Name', 'Product Name') }}
+                                {{ render_field_card('Manufacturer', 'Manufacturer') }}
+                                {{ render_field_card('Address', 'Address') }}
+                                {{ render_field_card('Net Quantity', 'Net Quantity') }}
+                                {{ render_field_card('MRP (incl. of all taxes)', 'MRP') }}
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="fields-subcolumn">
+                                {% set calc_usp_val = fields.get('Calculated USP') or (fields_detail.get('Unit Sale Price', {}).calculated_usp if fields_detail and fields_detail.get('Unit Sale Price') else none) %}
+                                {% set printed_usp_val = fields.get('Printed USP') or (fields_detail.get('Unit Sale Price', {}).printed_usp if fields_detail and fields_detail.get('Unit Sale Price') else none) %}
+                                
+                                {{ render_field_card('Unit Sale Price (Calculated)', 'Calculated USP', custom_val=calc_usp_val or 'Not Calculable', custom_fd=fields_detail.get('Calculated USP'), hint='(Rule 6(1)(m))') }}
+                                
+                                {{ render_field_card('Printed USP', 'Printed USP', custom_val=printed_usp_val or (fields.get('Unit Sale Price') if fields.get('Unit Sale Price') != calc_usp_val else 'Not Detected') or 'Not Printed', custom_fd=fields_detail.get('Printed USP') or fields_detail.get('Unit Sale Price')) }}
+                                
+                                {{ render_field_card('Manufacturing Date', 'Manufacturing Date') }}
+                                {{ render_field_card('Batch / Lot Number', 'Batch Number') }}
+                                {{ render_field_card('Best Before / Expiry', 'Best Before / Expiry') }}
+                                {{ render_field_card('Consumer Care', 'Consumer Care') }}
+                                {{ render_field_card('Country of Origin', 'Country of Origin') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Compact Status Card -->
+                    <div class="compliance-status-card">
+                        <div class="status-card-badge">
+                            {% if result %}
+                                <span class="status-badge badge-{{ result.status.lower().replace('_', '').replace('-', '') }}">
+                                    {{ result.status }}
+                                </span>
+                            {% elif fields and (fields.get('Product Name') or fields.get('Net Quantity')) %}
+                                <span class="status-badge badge-compliant">
+                                    READY FOR AUDIT
+                                </span>
+                            {% else %}
+                                <span class="status-badge badge-requiresreview">
+                                    AWAITING UPLOAD
+                                </span>
+                            {% endif %}
+                        </div>
+
+                        <h4 class="status-card-title">Ready for Legal Metrology Verification</h4>
+                        <p class="status-card-desc">
+                            All extracted declarations normalized under Rule 6 and Rule 13 of PCR 2011. You can inspect values or refine them before audit.
+                        </p>
+
+                        <div class="status-card-checklist">
+                            <div class="check-row">
+                                <span class="check-icon">&check;</span>
+                                <span>Rule 6 Statutory Declarations Extracted</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-icon">&check;</span>
+                                <span>Unit Sale Price (USP) Auto-Normalized</span>
+                            </div>
+                            <div class="check-row">
+                                <span class="check-icon">&check;</span>
+                                <span>Multi-View Discrepancy Filter Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Action Bar -->
+                <div class="actions-footer-bar">
+                    <button type="button" class="btn-review-modal" onclick="openReviewModal()">
+                        &#9998; Review &amp; Edit
+                    </button>
+                    
+                    <form method="POST" style="display:inline-block;">
+                        <input type="hidden" name="action" value="check">
+                        <input type="hidden" name="current_image" value="{{ image_filename or '' }}">
+                        <input type="hidden" name="current_images_json" value='{{ (image_filenames or [image_filename]) | tojson | forceescape }}'>
+                        <input type="hidden" name="engine_used" value="{{ extraction_meta.engine if extraction_meta else 'Manual Input' }}">
+                        <input type="hidden" name="confidence" value="{{ extraction_meta.confidence if (extraction_meta and extraction_meta.confidence is not none) else '' }}">
+                        <input type="hidden" name="fields_detail_json" value='{{ fields_detail | tojson | forceescape }}'>
+                        
+                        <input type="hidden" name="product_name" value="{{ fields.get('Product Name', '') }}">
+                        <input type="hidden" name="manufacturer" value="{{ fields.get('Manufacturer', '') }}">
+                        <input type="hidden" name="address" value="{{ fields.get('Address', '') }}">
+                        <input type="hidden" name="net_quantity" value="{{ fields.get('Net Quantity', '') }}">
+                        <input type="hidden" name="mrp" value="{{ fields.get('MRP', '') }}">
+                        <input type="hidden" name="unit_sale_price" value="{{ fields.get('Unit Sale Price', '') }}">
+                        <input type="hidden" name="manufacturing_date" value="{{ fields.get('Manufacturing Date', '') }}">
+                        <input type="hidden" name="batch_number" value="{{ fields.get('Batch Number', '') }}">
+                        <input type="hidden" name="expiry_or_best_before" value="{{ fields.get('Best Before / Expiry', '') }}">
+                        <input type="hidden" name="country_of_origin" value="{{ fields.get('Country of Origin', 'India') }}">
+                        <input type="hidden" name="consumer_care" value="{{ fields.get('Consumer Care', '') }}">
+
+                        <button type="submit" class="btn-audit-primary">
+                            &#128737; Run Legal Metrology Audit
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PACKAGING EVIDENCE GALLERY (PRESERVES TEST STRINGS) -->
+            {% if image_filenames and image_filenames|length > 0 %}
+                <section class="unified-card">
+                    <div class="section-heading-box">
+                        <h3 class="section-step-title">Packaging Evidence ({{ image_filenames|length }} Views)</h3>
+                        <p class="section-step-desc">Visual inspection evidence captured across multi-view packaging panels</p>
+                    </div>
+
+                    <div class="evidence-gallery-grid">
+                        <div class="evidence-thumbs-list">
+                            {% for img_fn in image_filenames %}
+                                <div class="gallery-thumb-card {% if loop.first %}active{% endif %}" onclick="selectGalleryImage('{{ img_fn }}', this, 'Image {{ loop.index }}')">
+                                    <img src="/uploads/{{ img_fn }}" alt="View {{ loop.index }}">
+                                    <div class="gallery-thumb-label">[Image {{ loop.index }}]</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="evidence-active-viewer">
+                            <img id="main_gallery_preview" src="/uploads/{{ image_filename or image_filenames[0] }}" alt="Selected Packaging View">
+                            <div class="image-caption-note" id="gallery_caption_note">Viewing: [Image 1] (Selected Packaging View)</div>
+                        </div>
+                    </div>
+                </section>
+            {% elif image_filename %}
+                <section class="unified-card">
+                    <div class="section-heading-box">
+                        <h3 class="section-step-title">Uploaded Packaging Evidence</h3>
+                    </div>
+                    <div class="evidence-active-viewer">
+                        <img src="/uploads/{{ image_filename }}" alt="Uploaded Product Packaging Label">
+                        <div class="image-caption-note">[Image 1] Principal Display Panel (PDP) Evidence</div>
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- COMPLIANCE AUDIT EVALUATION & EVIDENCE SECTION (WHEN AUDITED) -->
+            {% if result %}
+                <section class="unified-card result-card {% if result.status == 'COMPLIANT' %}result-compliant{% elif result.status == 'PARTIALLY COMPLIANT' or result.status == 'REQUIRES_REVIEW' %}result-partial{% else %}result-noncompliant{% endif %}">
+                    
+                    <!-- FINAL INSPECTION SUMMARY HEADER -->
+                    <div class="report-header">
+                        <div>
+                            <h2>
+                                {% if result.status == 'COMPLIANT' %}
+                                    <span class="status-badge badge-compliant">&check; COMPLIANT</span>
+                                {% elif result.status == 'PARTIALLY COMPLIANT' %}
+                                    <span class="status-badge badge-partiallycompliant">&#9888; PARTIALLY COMPLIANT</span>
+                                {% elif result.status == 'REQUIRES_REVIEW' %}
+                                    <span class="status-badge badge-requiresreview">&#128269; REQUIRES REVIEW / MANUAL INSPECTION</span>
+                                {% elif result.status == 'NOT_DETECTED' %}
+                                    <span class="status-badge badge-notdetected">&#128203; EVIDENCE INSUFFICIENT</span>
+                                {% else %}
+                                    <span class="status-badge badge-noncompliant">&cross; NON-COMPLIANT</span>
+                                {% endif %}
+                            </h2>
+                            <p class="report-subtitle">
+                                {% if result.status == 'COMPLIANT' %}
+                                    All mandatory statutory declarations verified and satisfy Legal Metrology (Packaged Commodities) Rules, 2011.
+                                {% elif result.status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}
+                                    Affirmative statutory violation(s) confirmed under PCR 2011. Legal enforcement action recommended.
+                                {% elif result.status == 'REQUIRES_REVIEW' %}
+                                    Declarations require inspector review or physical verification. No affirmative violation confirmed.
+                                {% else %}
+                                    Statutory inspection under Legal Metrology (Packaged Commodities) Rules, 2011.
+                                {% endif %}
+                                {% if inspection_id %}
+                                    &bull; <strong>Inspection Certificate ID:</strong> <code>{{ inspection_id }}</code>
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-circle">
+                                <span class="score-num">{{ result.score }}%</span>
+                                <span class="score-text">Compliance Index</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AUDIT SUMMARY BAR -->
+                    <div class="audit-summary-bar">
+                        <span class="summary-pill pill-pass">&check; Passed: {{ result.passed_count }}</span>
+                        <span class="summary-pill pill-fail">&cross; Violations: {{ result.failed_count }}</span>
+                        <span class="summary-pill pill-warn">&#9888; Reviews: {{ result.warning_count }}</span>
+                        {% if result.not_detected_count %}
+                            <span class="summary-pill pill-nd">&#128269; Not Detected: {{ result.not_detected_count }}</span>
+                        {% endif %}
+                        {% if result.not_applicable_count %}
+                            <span class="summary-pill pill-na">&#9898; Exempt / N/A: {{ result.not_applicable_count }}</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- SCORE EXPLANATION & TRANSPARENCY NOTICE -->
+                    {% if result.score_explanation %}
+                        <div class="score-explanation-box">
+                            <div style="font-weight: 700; margin-bottom: 4px;">
+                                &#128204; Statutory Scoring Transparency:
+                            </div>
+                            <div>{{ result.score_explanation.summary }}</div>
+                            <div class="score-note-sub">
+                                <em>Compliance score is a weighted index across 10 statutory requirements under PCR 2011. Unreadable or missing fields require manual review and are not treated as confirmed legal violations. This score does not represent a statistical probability of legal compliance.</em>
+                            </div>
+                            <div class="score-breakdown-row">
+                                Affirmative Statutory Violations: <strong>{{ result.score_explanation.statutory_violations }}</strong> &bull;
+                                Inspector Review Required: <strong>{{ result.score_explanation.requires_review_count }}</strong> &bull;
+                                Undetected Declarations: <strong>{{ result.score_explanation.not_detected_count }}</strong> &bull;
+                                Statutory Exemptions: <strong>{{ result.score_explanation.exempt_count }}</strong> &bull;
+                                Fully Compliant Declarations: <strong>{{ result.score_explanation.compliant_count }}</strong>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- ACTIONABLE COMPLIANCE DIRECTIVES -->
+                    <div class="inspector-actions-box {% if (result.failed_count|default(0)) > 0 or result.status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}action-urgent{% elif (result.warning_count|default(0)) > 0 or (result.not_detected_count|default(0)) > 0 or result.status == 'REQUIRES_REVIEW' %}action-warning{% else %}action-success{% endif %}">
+                        <div class="action-box-title">
+                            {% if (result.failed_count|default(0)) > 0 or result.status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}
+                                &#128680; Actionable Statutory Enforcement Directives (Violations Detected)
+                            {% elif (result.warning_count|default(0)) > 0 or (result.not_detected_count|default(0)) > 0 or result.status == 'REQUIRES_REVIEW' %}
+                                &#128269; Actionable Compliance Directives (Examination Required)
+                            {% else %}
+                                &check; Actionable Compliance Directives (Fully Compliant)
+                            {% endif %}
+                        </div>
+                        <ol class="action-steps-list">
+                            {% if result.failed_count > 0 or result.status in ['NON-COMPLIANT', 'NON_COMPLIANT'] %}
+                                <li><strong>Statutory Notice:</strong> Issue Notice of Contravening Declaration under Section 36(1) of the Legal Metrology Act, 2009 for the non-compliant declaration(s) itemized in the audit table below.</li>
+                                <li><strong>Physical Packaging Verification:</strong> Inspect physical packaging units across the production batch to verify that the non-compliant declaration is present on all retail units.</li>
+                                <li><strong>Rectification / Seizure Action:</strong> Advise manufacturer, packer, or importer to halt distribution or seize non-conforming packaging units pursuant to Rule 32.</li>
+                            {% elif result.warning_count > 0 or result.not_detected_count > 0 or result.status == 'REQUIRES_REVIEW' %}
+                                <li><strong>Physical Label Examination:</strong> Inspect all physical package display panels (PDP, sides, back) to examine declarations flagged as 'Not Detected' in the uploaded image.</li>
+                                <li><strong>Resolve Low-Confidence Fields:</strong> Verify stamped text for fields flagged with low confidence (&lt;70%) or engine discrepancies in the Verification Console above.</li>
+                                <li><strong>Re-Audit &amp; Complete Certification:</strong> After entering verified declarations, re-run audit to generate an updated statutory compliance report.</li>
+                            {% else %}
+                                <li><strong>Packaging Cleared:</strong> All 10 mandatory statutory declaration requirements are satisfied for this packaged commodity.</li>
+                                <li><strong>Net Contents Verification:</strong> If routine sampling is active, conduct standard test weight/volume determination under Rule 24 and the Fourth Schedule.</li>
+                                <li><strong>Official Certification:</strong> Generate and archive the official statutory inspection certificate for departmental records.</li>
+                            {% endif %}
+                        </ol>
+                    </div>
+
+                    <!-- STATUTORY DECLARATION AUDIT TABLE (7 COLUMNS) -->
+                    <h3 style="margin-top: 25px; margin-bottom: 12px; font-size:16px; font-weight:700; color:#1e293b;">Statutory Declaration Audit Table</h3>
+                    <div class="table-responsive">
+                        <table class="audit-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 16%;">Rule ID &amp; Requirement</th>
+                                    <th style="width: 11%;">PCR 2011 Rule</th>
+                                    <th style="width: 19%;">Extracted Evidence &amp; Value</th>
+                                    <th style="width: 14%;">Confidence &amp; Source</th>
+                                    <th style="width: 14%;">Compliance Status</th>
+                                    <th style="width: 14%;">Inspector Finding &amp; Reason</th>
+                                    <th style="width: 12%;">Recommended Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in result.audit_table %}
+                                    <tr class="status-row-{{ row.status.lower().replace('_', '').replace('-', '') }}">
+                                        <td>
+                                            <div class="rule-id-tag">{{ row.rule_id }}</div>
+                                            <strong>{{ row.requirement }}</strong>
+                                        </td>
+                                        <td>
+                                            <code>{{ row.rule }}</code>
+                                            <div style="font-size: 10.5px; color: #64748b; margin-top: 2px;">{{ row.category }}</div>
+                                        </td>
+                                        <td>
+                                            {% if row.extracted_value %}
+                                                <div class="extracted-val-text">{{ row.extracted_value }}</div>
+                                            {% endif %}
+                                            <div class="extracted-ev-text"><small>{{ row.extracted_evidence }}</small></div>
+                                            {% if row.has_conflict %}
+                                                <div class="conflict-badge">&#9888; {{ row.conflict_detail }}</div>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column; gap: 4px;">
+                                                {% if row.source_images and row.source_images|length > 0 %}
+                                                    <span class="source-img-badge">&#128247; {{ row.source_images | join(', ') }}</span>
+                                                {% elif row.source_image %}
+                                                    <span class="source-img-badge">&#128247; {{ row.source_image }}</span>
+                                                {% endif %}
+
+                                                {% if row.extraction_source %}
+                                                    {% if row.extraction_source == 'Mistral OCR' or 'Mistral' in row.extraction_source %}
+                                                        <span class="source-tag source-tag-mistral">Mistral OCR</span>
+                                                    {% elif row.extraction_source == 'Gemini Vision AI' or 'Gemini' in row.extraction_source %}
+                                                        <span class="source-tag source-tag-gemini">Gemini Vision AI</span>
+                                                    {% elif row.extraction_source == 'Local OCR' %}
+                                                        <span class="source-tag source-tag-ocr">Local OCR</span>
+                                                    {% elif 'Refined' in row.extraction_source or 'User' in row.extraction_source or 'Inspector' in row.extraction_source %}
+                                                        <span class="source-tag source-tag-user">User Verified / Edited</span>
+                                                    {% elif 'E-Commerce' in row.extraction_source %}
+                                                        <span class="source-tag source-tag-ecommerce">E-Commerce</span>
+                                                    {% else %}
+                                                        <span class="source-tag">{{ row.extraction_source }}</span>
+                                                    {% endif %}
+                                                {% endif %}
+
+                                                {% if row.confidence is not none %}
+                                                    <span class="conf-pill {% if row.confidence < 70.0 %}conf-pill-low{% else %}conf-pill-high{% endif %}">
+                                                        {% if row.confidence < 70.0 %}&#9888;{% else %}&check;{% endif %}
+                                                        {{ "%.1f"|format(row.confidence) }}%
+                                                    </span>
+                                                {% else %}
+                                                    <span class="conf-pill conf-pill-na">Unmeasured</span>
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {% if row.status == 'COMPLIANT' %}
+                                                <span class="status-badge badge-compliant">&check; COMPLIANT</span>
+                                            {% elif row.status in ['NON_COMPLIANT', 'NON-COMPLIANT'] %}
+                                                <span class="status-badge badge-noncompliant">&cross; NON-COMPLIANT</span>
+                                            {% elif row.status == 'REQUIRES_REVIEW' %}
+                                                <span class="status-badge badge-requiresreview">&#9888; REQUIRES_REVIEW</span>
+                                            {% elif row.status == 'NOT_DETECTED' %}
+                                                <span class="status-badge badge-notdetected">&#128269; NOT_DETECTED</span>
+                                            {% elif row.status == 'NOT_APPLICABLE' %}
+                                                <span class="status-badge badge-notapplicable">&#9898; NOT_APPLICABLE</span>
+                                            {% else %}
+                                                <span class="status-badge">{{ row.status }}</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <div class="reason-text">{{ row.reason }}</div>
+                                        </td>
+                                        <td>
+                                            <div class="action-text">{{ row.recommended_action }}</div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="report-actions" style="margin-top: 20px; display:flex; gap:10px;">
+                        {% if inspection_id %}
+                            <a href="/inspection/{{ inspection_id }}/report" class="btn-audit-primary" style="text-decoration:none; padding:8px 16px; font-size:13px;">
+                                &#128438; View Official Certificate
+                            </a>
+                            <a href="/api/inspection/{{ inspection_id }}/json" class="btn-review-modal" style="text-decoration:none; padding:8px 16px; font-size:13px; background:#f1f5f9; color:#1e293b; border:1px solid #cbd5e1;" target="_blank">
+                                &#128229; Download JSON
+                            </a>
+                        {% endif %}
+                        <button onclick="window.print()" class="btn-review-modal" style="padding:8px 16px; font-size:13px; background:#ffffff; border:1px solid #cbd5e1; cursor:pointer;">
+                            &#128438; Print Compliance Audit
+                        </button>
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- ENGINE & PROVIDER TELEMETRY CONSOLE -->
+            <section class="unified-card telemetry-card">
+                <div class="telemetry-header">
+                    <h3 style="font-size:15px; font-weight:700; color:#1e293b; margin:0;">&#129302; Multimodal Vision &amp; Provider Telemetry Console</h3>
+                    <span class="telemetry-mode-badge">Provider Hierarchy: MISTRAL (Primary) &rarr; GEMINI (Optional) &rarr; LOCAL</span>
+                </div>
+                
+                <div class="telemetry-grid">
+                    <!-- Mistral Status (Primary) -->
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Mistral Configured:</span>
+                        {% if has_mistral_key or (extraction_meta and extraction_meta.mistral_configured) %}
+                            <span class="status-pill status-pill-yes">&check; YES</span>
+                        {% else %}
+                            <span class="status-pill status-pill-no">&cross; NO</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Mistral Attempted:</span>
+                        {% if extraction_meta %}
+                            {% if extraction_meta.mistral_attempted %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">NO (Skipped)</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Mistral Successful:</span>
+                        {% if extraction_meta %}
+                            {% if extraction_meta.mistral_success %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% elif extraction_meta.mistral_attempted %}
+                                <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">N/A</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Gemini Status (Optional Secondary) -->
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Gemini Available:</span>
+                        {% if has_gemini_key or (extraction_meta and extraction_meta.gemini_configured) %}
+                            <span class="status-pill status-pill-yes">&check; YES</span>
+                        {% else %}
+                            <span class="status-pill status-pill-no">&cross; NO</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Gemini Attempted:</span>
+                        {% if extraction_meta %}
+                            {% if extraction_meta.gemini_attempted %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">NO (Skipped)</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Gemini Successful:</span>
+                        {% if extraction_meta %}
+                            {% if extraction_meta.gemini_success %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% elif extraction_meta.gemini_attempted %}
+                                <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">N/A</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Local OCR Status -->
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Local OCR Always Ready:</span>
+                        <span class="status-pill status-pill-yes">&check; YES (100% Offline)</span>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Local OCR Attempted:</span>
+                        {% if extraction_meta %}
+                            {% if extraction_meta.local_ocr_attempted %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">NO (Not Needed)</span>
+                            {% endif %}
+                        {% else %}
+                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Images Uploaded:</span>
+                        <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_uploaded is defined %}{{ extraction_meta.images_uploaded }}{% else %}&mdash;{% endif %}</span>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Images Processed:</span>
+                        <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_processed is defined %}{{ extraction_meta.images_processed }}{% else %}&mdash;{% endif %}</span>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Images Failed:</span>
+                        <span class="telemetry-val">
+                            {% if extraction_meta and extraction_meta.images_failed is defined %}
+                                {% if extraction_meta.images_failed > 0 %}
+                                    <span style="color: #dc2626; font-weight: bold;">{{ extraction_meta.images_failed }}</span>
+                                {% else %}
+                                    <span style="color: #16a34a;">0</span>
+                                {% endif %}
+                            {% else %}
+                                &mdash;
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Processing Time:</span>
+                        <span class="telemetry-val">{% if extraction_meta %}{{ extraction_meta.time_sec }}s{% else %}&mdash;{% endif %}</span>
+                    </div>
+
+                    <div class="telemetry-item">
+                        <span class="telemetry-title">Fallback Reason:</span>
+                        <span class="telemetry-val">
+                            {% if extraction_meta and extraction_meta.fallback_note %}
+                                {{ extraction_meta.fallback_note }}
+                            {% elif extraction_meta and not extraction_meta.fallback_used %}
+                                None &mdash; Primary Engine Used
+                            {% else %}
+                                &mdash;
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="telemetry-item" style="grid-column: 1 / -1;">
+                        <span class="telemetry-title">Actual Extraction Engine:</span>
+                        {% if extraction_meta %}
+                            <span class="telemetry-engine-val">{{ extraction_meta.engine }}</span>
+                        {% else %}
+                            <span class="telemetry-engine-val">Awaiting Scan</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if extraction_meta and extraction_meta.fallback_used and extraction_meta.fallback_note %}
+                    <div style="margin-top:12px; padding:10px 14px; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px; font-size:13px; color:#1e40af;">
+                        <strong>Provider Fallback Active:</strong> {{ extraction_meta.fallback_note }}
+                    </div>
+                {% endif %}
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    &copy; 2026 <strong>scan2sure</strong> | <strong>SIH26034</strong> &ndash; Legal Metrology Compliance System
+                </div>
+                <div class="footer-tagline">
+                    SCAN &bull; VERIFY &bull; TRUST
+                </div>
+                <div class="footer-right">
+                    Directorate of Legal Metrology &bull; Ministry of Consumer Affairs
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</div>
+
+<!-- REVIEW & EDIT MODAL OVERLAY -->
+<div id="review_edit_modal" class="modal-backdrop">
+    <div class="modal-dialog-box">
+        <div class="modal-header">
+            <h3>Review &amp; Edit Product Information</h3>
+            <button type="button" class="modal-close-btn" onclick="closeReviewModal()">&times;</button>
+        </div>
+
+        <form method="POST" id="modal_review_form">
+            <div class="modal-body">
+                <input type="hidden" name="action" value="check">
+                <input type="hidden" name="current_image" value="{{ image_filename or '' }}">
+                <input type="hidden" name="current_images_json" value='{{ (image_filenames or [image_filename]) | tojson | forceescape }}'>
+                <input type="hidden" name="engine_used" value="{{ extraction_meta.engine if extraction_meta else 'Manual Input' }}">
+                <input type="hidden" name="confidence" value="{{ extraction_meta.confidence if (extraction_meta and extraction_meta.confidence is not none) else '' }}">
+                <input type="hidden" name="fields_detail_json" value='{{ fields_detail | tojson | forceescape }}'>
+
+                <div class="modal-field-group">
+                    <label class="modal-label">Generic / Common Commodity Name * (Rule 6(1)(a))</label>
+                    <input type="text" name="product_name" class="modal-input" value="{{ fields.get('Product Name', '') }}" placeholder="e.g. Monaliz Baking Powder">
+                </div>
+
+                <div class="modal-grid-2">
+                    <div class="modal-field-group">
+                        <label class="modal-label">Net Quantity * (Rule 6(1)(c))</label>
+                        <input type="text" name="net_quantity" class="modal-input" value="{{ fields.get('Net Quantity', '') }}" placeholder="e.g. 50 g, 1 kg">
+                    </div>
+                    <div class="modal-field-group">
+                        <label class="modal-label">Retail Sale Price (MRP) * (Rule 6(1)(da))</label>
+                        <input type="text" name="mrp" class="modal-input" value="{{ fields.get('MRP', '') }}" placeholder="e.g. Rs. 28.00 (incl. of all taxes)">
+                    </div>
+                </div>
+
+                <div class="modal-grid-2">
+                    <div class="modal-field-group">
+                        <label class="modal-label">Unit Sale Price (USP) (Rule 6(1)(m))</label>
+                        <input type="text" name="unit_sale_price" class="modal-input" value="{{ fields.get('Unit Sale Price', '') }}" placeholder="e.g. Rs. 0.56 / g (auto-calc if blank)">
+                    </div>
+                    <div class="modal-field-group">
+                        <label class="modal-label">Commodity Category (Rule 26 / 6(1)(g))</label>
+                        <select name="commodity_category" class="modal-input">
+                            <option value="">Auto-Detect from Commodity</option>
+                            <option value="food">Food / Perishable (Expiry Mandatory)</option>
+                            <option value="non_food">Non-Food / General (Expiry Exempt)</option>
+                            <option value="medical_device">Medical Device (CDSCO Rules)</option>
+                            <option value="cosmetic">Cosmetic / Toilet Soap</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-field-group">
+                    <label class="modal-label">Manufacturer / Packer Name * (Rule 6(1)(b))</label>
+                    <input type="text" name="manufacturer" class="modal-input" value="{{ fields.get('Manufacturer', '') }}" placeholder="e.g. Monaliz Food Product, 12 Industrial Area, Mumbai 400001">
+                </div>
+
+                <div class="modal-field-group">
+                    <label class="modal-label">Manufacturer / Factory Address (Rule 6(1)(b))</label>
+                    <input type="text" name="address" class="modal-input" value="{{ fields.get('Address', '') }}" placeholder="e.g. 12 Industrial Area, Andheri East, Mumbai 400001">
+                </div>
+
+                <div class="modal-grid-2">
+                    <div class="modal-field-group">
+                        <label class="modal-label">Date of Manufacture * (Rule 6(1)(d))</label>
+                        <input type="text" name="manufacturing_date" class="modal-input" value="{{ fields.get('Manufacturing Date', '') }}" placeholder="e.g. 15/10/2025 or 10/2025">
+                    </div>
+                    <div class="modal-field-group">
+                        <label class="modal-label">Batch / Lot Identification (Rule 6(1))</label>
+                        <input type="text" name="batch_number" class="modal-input" value="{{ fields.get('Batch Number', '') }}" placeholder="e.g. AB1025">
+                    </div>
+                </div>
+
+                <div class="modal-grid-2">
+                    <div class="modal-field-group">
+                        <label class="modal-label">Best Before / Expiry (Rule 6(1)(g))</label>
+                        <input type="text" name="expiry_or_best_before" class="modal-input" value="{{ fields.get('Best Before / Expiry', '') }}" placeholder="e.g. 14/10/2027">
+                    </div>
+                    <div class="modal-field-group">
+                        <label class="modal-label">Country of Origin (Rule 6(10))</label>
+                        <input type="text" name="country_of_origin" class="modal-input" value="{{ fields.get('Country of Origin', 'India') }}" placeholder="e.g. India">
+                    </div>
+                </div>
+
+                <div class="modal-field-group">
+                    <label class="modal-label">Consumer Care Redressal Details * (Rule 6(1)(e))</label>
+                    <input type="text" name="consumer_care" class="modal-input" value="{{ fields.get('Consumer Care', '') }}" placeholder="Helpline phone, email, postal address">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-review-modal" onclick="closeReviewModal()">Cancel</button>
+                <button type="submit" class="btn-audit-primary">&#128737; Save &amp; Run Audit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Review Modal Functions
+    function openReviewModal() {
+        const m = document.getElementById('review_edit_modal');
+        if (m) m.classList.add('active');
+    }
+    function closeReviewModal() {
+        const m = document.getElementById('review_edit_modal');
+        if (m) m.classList.remove('active');
+    }
+
+    // Drag and Drop & Multi-File Staging
+    const productImagesInput = document.getElementById('product_images_input');
+    const stagedGrid = document.getElementById('staged_grid');
+    const uploadedCountText = document.getElementById('uploaded_count_text');
+    const multiUploadForm = document.getElementById('multi_upload_form');
+    const uploadSpinner = document.getElementById('upload_spinner');
+    const btnSubmitExtract = document.getElementById('btn_submit_extract');
+    const dropZone = document.getElementById('drop_zone');
+    const emptyPreviewsMsg = document.getElementById('empty_previews_msg');
+
+    let stagedFilesList = [];
+
+    if (dropZone) {
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.add('drag-over');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.classList.remove('drag-over');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            if (dt && dt.files && dt.files.length > 0) {
+                handleNewSelectedFiles(Array.from(dt.files));
+            }
+        });
+    }
+
+    if (productImagesInput) {
+        productImagesInput.addEventListener('change', function(e) {
+            handleNewSelectedFiles(Array.from(e.target.files));
+        });
+    }
+
+    function handleNewSelectedFiles(newFiles) {
+        if (!newFiles || newFiles.length === 0) return;
+
+        let combined = [...stagedFilesList];
+        for (const f of newFiles) {
+            if (!combined.some(ex => ex.name === f.name && ex.size === f.size)) {
+                if (combined.length < 10) {
+                    combined.push(f);
+                }
+            }
+        }
+        stagedFilesList = combined.slice(0, 10);
+        syncInputDataTransfer();
+        renderThumbnailsGrid();
+    }
+
+    function syncInputDataTransfer() {
+        if (!productImagesInput) return;
+        try {
+            const dt = new DataTransfer();
+            for (const f of stagedFilesList) {
+                dt.items.add(f);
+            }
+            productImagesInput.files = dt.files;
+        } catch (e) {
+            console.warn('DataTransfer error:', e);
+        }
+    }
+
+    function removeStagedCard(index) {
+        stagedFilesList.splice(index, 1);
+        syncInputDataTransfer();
+        renderThumbnailsGrid();
+    }
+
+    function renderThumbnailsGrid() {
+        if (!stagedGrid) return;
+
+        if (stagedFilesList.length === 0) {
+            if (uploadedCountText) uploadedCountText.textContent = '0';
+            if (emptyPreviewsMsg) {
+                stagedGrid.innerHTML = '';
+                stagedGrid.appendChild(emptyPreviewsMsg);
+            }
+            return;
+        }
+
+        stagedGrid.innerHTML = '';
+        if (uploadedCountText) uploadedCountText.textContent = stagedFilesList.length;
+
+        stagedFilesList.forEach((file, idx) => {
+            const card = document.createElement('div');
+            card.className = 'thumbnail-preview-card';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'thumb-img-wrap';
+
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            img.alt = `View ${idx + 1}`;
+
+            const badge = document.createElement('span');
+            badge.className = 'thumb-index-badge';
+            badge.textContent = `[${idx + 1}]`;
+
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'thumb-remove-btn';
+            removeBtn.innerHTML = '&times;';
+            removeBtn.title = 'Remove this packaging view';
+            removeBtn.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                removeStagedCard(idx);
+            };
+
+            wrap.appendChild(img);
+            wrap.appendChild(badge);
+            wrap.appendChild(removeBtn);
+
+            const info = document.createElement('div');
+            info.className = 'thumb-info';
+
+            const name = document.createElement('div');
+            name.className = 'thumb-name';
+            name.textContent = file.name;
+            name.title = file.name;
+
+            const size = document.createElement('div');
+            size.className = 'thumb-size';
+            const sizeKb = Math.round(file.size / 1024);
+            size.textContent = `${sizeKb} KB`;
+
+            info.appendChild(name);
+            info.appendChild(size);
+
+            card.appendChild(wrap);
+            card.appendChild(info);
+
+            stagedGrid.appendChild(card);
+        });
+    }
+
+    if (multiUploadForm) {
+        multiUploadForm.addEventListener('submit', function(e) {
+            if (stagedFilesList.length === 0 && (!productImagesInput.files || productImagesInput.files.length === 0)) {
+                e.preventDefault();
+                alert('Please select at least one packaging image before extracting.');
+                return;
+            }
+            if (uploadSpinner) uploadSpinner.style.display = 'block';
+            if (btnSubmitExtract) {
+                btnSubmitExtract.disabled = true;
+                btnSubmitExtract.innerHTML = '&#9203; Processing Packaging Views...';
+            }
+        });
+    }
+
+    // Evidence Gallery Switcher
+    function selectGalleryImage(filename, cardElem, label) {
+        const mainImg = document.getElementById('main_gallery_preview');
+        const captionNote = document.getElementById('gallery_caption_note');
+        if (mainImg) {
+            mainImg.src = '/uploads/' + filename;
+        }
+        if (captionNote) {
+            captionNote.textContent = `Viewing: [${label}] (Selected Packaging View)`;
+        }
+        const cards = document.querySelectorAll('.gallery-thumb-card');
+        cards.forEach(c => c.classList.remove('active'));
+        if (cardElem) {
+            cardElem.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
