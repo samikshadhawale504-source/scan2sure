@@ -163,6 +163,33 @@
             color: #744210;
             line-height: 1.5;
         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px 8px;
+            }
+            .no-print {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 12px !important;
+            }
+            .no-print > div {
+                flex-wrap: wrap !important;
+            }
+            .report-cert {
+                padding: 16px 12px !important;
+            }
+            .cert-dossier-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .cert-header h2 {
+                font-size: 17px !important;
+            }
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
     </style>
 </head>
 <body>

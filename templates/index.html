@@ -3,10 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scan2sure &ndash; Legal Metrology Compliance System | SIH26034</title>
+    <title>scan2sure &ndash; Legal Metrology Compliance System</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body class="scan2sure-app">
+    <!-- MOBILE TOP HEADER (Visible only on mobile <= 768px, display: none on desktop) -->
+    <header class="mobile-app-header">
+        <button type="button" class="mobile-hamburger-btn" id="mobile_hamburger_btn" aria-label="Open Navigation Menu" onclick="toggleMobileNav()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="mobile-brand">
+            <div class="mobile-brand-text">
+                <span class="mobile-brand-title">scan2sure</span>
+                <span class="mobile-brand-tagline">SCAN &bull; VERIFY &bull; TRUST</span>
+            </div>
+            <img src="/static/img/scan2sure_logo.png" alt="scan2sure logo" class="mobile-brand-logo">
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER & BACKDROP (Hidden on desktop) -->
+    <div class="mobile-nav-backdrop" id="mobile_nav_backdrop" onclick="closeMobileNav()"></div>
+    <aside class="mobile-nav-drawer" id="mobile_nav_drawer">
+        <div class="mobile-drawer-header">
+            <span style="font-size:12px; font-weight:700; color:#475569; letter-spacing:0.5px; text-transform:uppercase;">Quick Navigation</span>
+            <button type="button" class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Close Navigation Menu">&times;</button>
+        </div>
+
+        <nav class="mobile-drawer-nav">
+            <div class="mobile-nav-section-title">MAIN NAVIGATION</div>
+            <a href="/" class="mobile-nav-link active" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="/ecommerce" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span>E-Commerce Audit</span>
+            </a>
+            <a href="/history" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>History / Audit Log</span>
+            </a>
+            <a href="/certificates" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Certificates</span>
+            </a>
+            <a href="/analytics" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Analytics</span>
+            </a>
+
+            <div class="mobile-nav-section-title">SYSTEM &amp; COMPLIANCE</div>
+            <a href="/settings" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span>Settings &amp; Engine</span>
+            </a>
+            <a href="/help" class="mobile-nav-link" onclick="closeMobileNav()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>Legal Rules &amp; Help</span>
+            </a>
+        </nav>
+
+        <div class="mobile-drawer-footer">
+            <div class="status-indicator-dot"></div>
+            <div>
+                <div style="font-weight: 700; color: #1e293b; font-size: 12px;">System Status: Active</div>
+                <div style="font-size: 11px; color: #64748b;">Legal Metrology Rules 2011</div>
+            </div>
+        </div>
+    </aside>
+
 <div class="app-layout">
 
     <!-- FIXED 240px SIDEBAR -->
@@ -72,7 +139,6 @@
                 <p class="header-system-sub">AI-Powered Inspection of Packaged Commodities</p>
             </div>
             <div class="header-right">
-                <span class="badge-sih">SIH26034</span>
                 <div class="inspector-profile">
                     <div class="avatar-circle">IN</div>
                     <div class="inspector-details">
@@ -210,43 +276,119 @@
                 {% set is_extracted = fields or (extraction_meta and extraction_meta.images_processed > 0) %}
                 {% set is_audited = result is defined and result is not none %}
 
-                <div class="stepper-horizontal">
-                    <!-- Step 1: Processing Images -->
-                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% else %}active{% endif %}">
-                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}1{% endif %}</div>
-                        <div class="stepper-text">Processing Images</div>
+                <!-- DESKTOP STEPPER VIEW (Visible on desktop > 768px) -->
+                <div class="stepper-desktop-wrap">
+                    <div class="stepper-horizontal">
+                        <!-- Step 1: Processing Images -->
+                        <div class="stepper-step {% if is_extracted or is_audited %}completed{% else %}active{% endif %}">
+                            <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}1{% endif %}</div>
+                            <div class="stepper-text">Processing Images</div>
+                        </div>
+
+                        <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                        <!-- Step 2: Extracting Text -->
+                        <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}2{% endif %}</div>
+                            <div class="stepper-text">Extracting Text</div>
+                        </div>
+
+                        <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                        <!-- Step 3: Combining Information -->
+                        <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}3{% endif %}</div>
+                            <div class="stepper-text">Combining Information</div>
+                        </div>
+
+                        <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+
+                        <!-- Step 4: Calculating USP -->
+                        <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}4{% endif %}</div>
+                            <div class="stepper-text">Calculating USP</div>
+                        </div>
+
+                        <div class="stepper-divider {% if is_audited %}completed{% endif %}"></div>
+
+                        <!-- Step 5: Running Compliance Checks -->
+                        <div class="stepper-step {% if is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="stepper-circle">{% if is_audited %}&#10003;{% else %}5{% endif %}</div>
+                            <div class="stepper-text">Running Compliance Checks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOBILE DEDICATED PROGRESS COMPONENT (Visible on mobile <= 768px, hidden on desktop) -->
+                <div class="stepper-mobile-card">
+                    <div class="mobile-stepper-summary">
+                        <div class="mobile-stepper-status-badge">
+                            {% if is_audited %}
+                                <span class="status-pulse-dot dot-green"></span>
+                                <span>Stage 5 of 5: Statutory Compliance Check Completed</span>
+                            {% elif is_extracted %}
+                                <span class="status-pulse-dot dot-blue"></span>
+                                <span>Stage 4 of 5: Extraction &amp; USP Complete &bull; Ready to Audit</span>
+                            {% else %}
+                                <span class="status-pulse-dot dot-gray"></span>
+                                <span>Stage 1 of 5: Ready for Multi-View Packaging Upload</span>
+                            {% endif %}
+                        </div>
+                        <div class="mobile-progress-bar-wrap">
+                            <div class="mobile-progress-bar-fill" style="width: {% if is_audited %}100%{% elif is_extracted %}80%{% else %}20%{% endif %};"></div>
+                        </div>
                     </div>
 
-                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+                    <div class="mobile-stepper-list">
+                        <!-- Stage 1 -->
+                        <div class="mobile-step-item {% if is_extracted or is_audited %}completed{% else %}active{% endif %}">
+                            <div class="mobile-step-icon">{% if is_extracted or is_audited %}&#10003;{% else %}1{% endif %}</div>
+                            <div class="mobile-step-content">
+                                <div class="mobile-step-title">Processing Images</div>
+                                <div class="mobile-step-sub">Validate &amp; stage packaging panels</div>
+                            </div>
+                            <div class="mobile-step-pill">{% if is_extracted or is_audited %}Done{% else %}Active{% endif %}</div>
+                        </div>
 
-                    <!-- Step 2: Extracting Text -->
-                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
-                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}2{% endif %}</div>
-                        <div class="stepper-text">Extracting Text</div>
-                    </div>
+                        <!-- Stage 2 -->
+                        <div class="mobile-step-item {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="mobile-step-icon">{% if is_extracted or is_audited %}&#10003;{% else %}2{% endif %}</div>
+                            <div class="mobile-step-content">
+                                <div class="mobile-step-title">Extracting Text</div>
+                                <div class="mobile-step-sub">Mistral OCR &rarr; Gemini &rarr; Local AI</div>
+                            </div>
+                            <div class="mobile-step-pill">{% if is_extracted or is_audited %}Done{% elif is_extracted %}Active{% else %}Pending{% endif %}</div>
+                        </div>
 
-                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
+                        <!-- Stage 3 -->
+                        <div class="mobile-step-item {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="mobile-step-icon">{% if is_extracted or is_audited %}&#10003;{% else %}3{% endif %}</div>
+                            <div class="mobile-step-content">
+                                <div class="mobile-step-title">Combining Information</div>
+                                <div class="mobile-step-sub">Multi-panel fusion &amp; provenance</div>
+                            </div>
+                            <div class="mobile-step-pill">{% if is_extracted or is_audited %}Done{% elif is_extracted %}Active{% else %}Pending{% endif %}</div>
+                        </div>
 
-                    <!-- Step 3: Combining Information -->
-                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
-                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}3{% endif %}</div>
-                        <div class="stepper-text">Combining Information</div>
-                    </div>
+                        <!-- Stage 4 -->
+                        <div class="mobile-step-item {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="mobile-step-icon">{% if is_extracted or is_audited %}&#10003;{% else %}4{% endif %}</div>
+                            <div class="mobile-step-content">
+                                <div class="mobile-step-title">Calculating USP</div>
+                                <div class="mobile-step-sub">Rule 6(1)(m) metric normalization</div>
+                            </div>
+                            <div class="mobile-step-pill">{% if is_extracted or is_audited %}Done{% elif is_extracted %}Active{% else %}Pending{% endif %}</div>
+                        </div>
 
-                    <div class="stepper-divider {% if is_extracted or is_audited %}completed{% endif %}"></div>
-
-                    <!-- Step 4: Calculating USP -->
-                    <div class="stepper-step {% if is_extracted or is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
-                        <div class="stepper-circle">{% if is_extracted or is_audited %}&#10003;{% else %}4{% endif %}</div>
-                        <div class="stepper-text">Calculating USP</div>
-                    </div>
-
-                    <div class="stepper-divider {% if is_audited %}completed{% endif %}"></div>
-
-                    <!-- Step 5: Running Compliance Checks -->
-                    <div class="stepper-step {% if is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
-                        <div class="stepper-circle">{% if is_audited %}&#10003;{% else %}5{% endif %}</div>
-                        <div class="stepper-text">Running Compliance Checks</div>
+                        <!-- Stage 5 -->
+                        <div class="mobile-step-item {% if is_audited %}completed{% elif is_extracted %}active{% else %}pending{% endif %}">
+                            <div class="mobile-step-icon">{% if is_audited %}&#10003;{% else %}5{% endif %}</div>
+                            <div class="mobile-step-content">
+                                <div class="mobile-step-title">Running Compliance Checks</div>
+                                <div class="mobile-step-sub">Legal Metrology PCR 2011 Rule 6</div>
+                            </div>
+                            <div class="mobile-step-pill">{% if is_audited %}Audited{% elif is_extracted %}Ready{% else %}Pending{% endif %}</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -341,7 +483,8 @@
                 <div class="unified-content-grid">
                     <!-- Left: Two-Column Structured Field Display -->
                     <div class="product-fields-container">
-                        <div class="fields-two-column">
+                        <!-- DESKTOP FIELDS VIEW (Visible on desktop > 768px) -->
+                        <div class="fields-two-column desktop-fields-view">
                             <!-- Left Column -->
                             <div class="fields-subcolumn">
                                 {{ render_field_card('Product Name', 'Product Name') }}
@@ -365,6 +508,64 @@
                                 {{ render_field_card('Best Before / Expiry', 'Best Before / Expiry') }}
                                 {{ render_field_card('Consumer Care', 'Consumer Care') }}
                                 {{ render_field_card('Country of Origin', 'Country of Origin') }}
+                            </div>
+                        </div>
+
+                        <!-- MOBILE THEMATIC GROUPED FIELDS VIEW (Visible on mobile <= 768px, hidden on desktop) -->
+                        <div class="mobile-fields-view">
+                            {% set calc_usp_val = fields.get('Calculated USP') or (fields_detail.get('Unit Sale Price', {}).calculated_usp if fields_detail and fields_detail.get('Unit Sale Price') else none) %}
+                            {% set printed_usp_val = fields.get('Printed USP') or (fields_detail.get('Unit Sale Price', {}).printed_usp if fields_detail and fields_detail.get('Unit Sale Price') else none) %}
+
+                            <!-- Group 1: PRODUCT DETAILS -->
+                            <div class="mobile-field-group-card">
+                                <div class="mobile-field-group-header">
+                                    <span class="mobile-group-icon">&#128230;</span>
+                                    <span class="mobile-group-title">PRODUCT DETAILS</span>
+                                </div>
+                                <div class="mobile-field-group-body">
+                                    {{ render_field_card('Product Name', 'Product Name') }}
+                                    {{ render_field_card('Manufacturer', 'Manufacturer') }}
+                                    {{ render_field_card('Address', 'Address') }}
+                                </div>
+                            </div>
+
+                            <!-- Group 2: QUANTITY & PRICE -->
+                            <div class="mobile-field-group-card">
+                                <div class="mobile-field-group-header">
+                                    <span class="mobile-group-icon">&#9878;</span>
+                                    <span class="mobile-group-title">QUANTITY &amp; PRICE</span>
+                                </div>
+                                <div class="mobile-field-group-body">
+                                    {{ render_field_card('Net Quantity', 'Net Quantity') }}
+                                    {{ render_field_card('MRP (incl. of all taxes)', 'MRP') }}
+                                    {{ render_field_card('Unit Sale Price (Calculated)', 'Calculated USP', custom_val=calc_usp_val or 'Not Calculable', custom_fd=fields_detail.get('Calculated USP'), hint='(Rule 6(1)(m))') }}
+                                    {{ render_field_card('Printed USP', 'Printed USP', custom_val=printed_usp_val or (fields.get('Unit Sale Price') if fields.get('Unit Sale Price') != calc_usp_val else 'Not Detected') or 'Not Printed', custom_fd=fields_detail.get('Printed USP') or fields_detail.get('Unit Sale Price')) }}
+                                </div>
+                            </div>
+
+                            <!-- Group 3: DATES & IDENTIFICATION -->
+                            <div class="mobile-field-group-card">
+                                <div class="mobile-field-group-header">
+                                    <span class="mobile-group-icon">&#128197;</span>
+                                    <span class="mobile-group-title">DATES &amp; IDENTIFICATION</span>
+                                </div>
+                                <div class="mobile-field-group-body">
+                                    {{ render_field_card('Manufacturing Date', 'Manufacturing Date') }}
+                                    {{ render_field_card('Batch / Lot Number', 'Batch Number') }}
+                                    {{ render_field_card('Best Before / Expiry', 'Best Before / Expiry') }}
+                                </div>
+                            </div>
+
+                            <!-- Group 4: CONTACT & ORIGIN -->
+                            <div class="mobile-field-group-card">
+                                <div class="mobile-field-group-header">
+                                    <span class="mobile-group-icon">&#127970;</span>
+                                    <span class="mobile-group-title">CONTACT &amp; ORIGIN</span>
+                                </div>
+                                <div class="mobile-field-group-body">
+                                    {{ render_field_card('Consumer Care', 'Consumer Care') }}
+                                    {{ render_field_card('Country of Origin', 'Country of Origin') }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -701,160 +902,236 @@
                     <span class="telemetry-mode-badge">Provider Hierarchy: MISTRAL (Primary) &rarr; GEMINI (Optional) &rarr; LOCAL</span>
                 </div>
                 
-                <div class="telemetry-grid">
-                    <!-- Mistral Status (Primary) -->
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Mistral Configured:</span>
-                        {% if has_mistral_key or (extraction_meta and extraction_meta.mistral_configured) %}
-                            <span class="status-pill status-pill-yes">&check; YES</span>
-                        {% else %}
-                            <span class="status-pill status-pill-no">&cross; NO</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Mistral Attempted:</span>
-                        {% if extraction_meta %}
-                            {% if extraction_meta.mistral_attempted %}
+                <!-- DESKTOP TELEMETRY VIEW (Visible on desktop > 768px) -->
+                <div class="desktop-telemetry-view">
+                    <div class="telemetry-grid">
+                        <!-- Mistral Status (Primary) -->
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Mistral Configured:</span>
+                            {% if has_mistral_key or (extraction_meta and extraction_meta.mistral_configured) %}
                                 <span class="status-pill status-pill-yes">&check; YES</span>
                             {% else %}
-                                <span class="status-pill status-pill-neutral">NO (Skipped)</span>
+                                <span class="status-pill status-pill-no">&cross; NO</span>
                             {% endif %}
-                        {% else %}
-                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
-                        {% endif %}
-                    </div>
+                        </div>
 
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Mistral Successful:</span>
-                        {% if extraction_meta %}
-                            {% if extraction_meta.mistral_success %}
-                                <span class="status-pill status-pill-yes">&check; YES</span>
-                            {% elif extraction_meta.mistral_attempted %}
-                                <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
-                            {% else %}
-                                <span class="status-pill status-pill-neutral">N/A</span>
-                            {% endif %}
-                        {% else %}
-                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
-                        {% endif %}
-                    </div>
-
-                    <!-- Gemini Status (Optional Secondary) -->
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Gemini Available:</span>
-                        {% if has_gemini_key or (extraction_meta and extraction_meta.gemini_configured) %}
-                            <span class="status-pill status-pill-yes">&check; YES</span>
-                        {% else %}
-                            <span class="status-pill status-pill-no">&cross; NO</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Gemini Attempted:</span>
-                        {% if extraction_meta %}
-                            {% if extraction_meta.gemini_attempted %}
-                                <span class="status-pill status-pill-yes">&check; YES</span>
-                            {% else %}
-                                <span class="status-pill status-pill-neutral">NO (Skipped)</span>
-                            {% endif %}
-                        {% else %}
-                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Gemini Successful:</span>
-                        {% if extraction_meta %}
-                            {% if extraction_meta.gemini_success %}
-                                <span class="status-pill status-pill-yes">&check; YES</span>
-                            {% elif extraction_meta.gemini_attempted %}
-                                <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
-                            {% else %}
-                                <span class="status-pill status-pill-neutral">N/A</span>
-                            {% endif %}
-                        {% else %}
-                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
-                        {% endif %}
-                    </div>
-
-                    <!-- Local OCR Status -->
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Local OCR Always Ready:</span>
-                        <span class="status-pill status-pill-yes">&check; YES (100% Offline)</span>
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Local OCR Attempted:</span>
-                        {% if extraction_meta %}
-                            {% if extraction_meta.local_ocr_attempted %}
-                                <span class="status-pill status-pill-yes">&check; YES</span>
-                            {% else %}
-                                <span class="status-pill status-pill-neutral">NO (Not Needed)</span>
-                            {% endif %}
-                        {% else %}
-                            <span class="status-pill status-pill-neutral">Awaiting Upload</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Images Uploaded:</span>
-                        <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_uploaded is defined %}{{ extraction_meta.images_uploaded }}{% else %}&mdash;{% endif %}</span>
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Images Processed:</span>
-                        <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_processed is defined %}{{ extraction_meta.images_processed }}{% else %}&mdash;{% endif %}</span>
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Images Failed:</span>
-                        <span class="telemetry-val">
-                            {% if extraction_meta and extraction_meta.images_failed is defined %}
-                                {% if extraction_meta.images_failed > 0 %}
-                                    <span style="color: #dc2626; font-weight: bold;">{{ extraction_meta.images_failed }}</span>
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Mistral Attempted:</span>
+                            {% if extraction_meta %}
+                                {% if extraction_meta.mistral_attempted %}
+                                    <span class="status-pill status-pill-yes">&check; YES</span>
                                 {% else %}
-                                    <span style="color: #16a34a;">0</span>
+                                    <span class="status-pill status-pill-neutral">NO (Skipped)</span>
                                 {% endif %}
                             {% else %}
-                                &mdash;
+                                <span class="status-pill status-pill-neutral">Awaiting Upload</span>
                             {% endif %}
-                        </span>
-                    </div>
+                        </div>
 
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Processing Time:</span>
-                        <span class="telemetry-val">{% if extraction_meta %}{{ extraction_meta.time_sec }}s{% else %}&mdash;{% endif %}</span>
-                    </div>
-
-                    <div class="telemetry-item">
-                        <span class="telemetry-title">Fallback Reason:</span>
-                        <span class="telemetry-val">
-                            {% if extraction_meta and extraction_meta.fallback_note %}
-                                {{ extraction_meta.fallback_note }}
-                            {% elif extraction_meta and not extraction_meta.fallback_used %}
-                                None &mdash; Primary Engine Used
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Mistral Successful:</span>
+                            {% if extraction_meta %}
+                                {% if extraction_meta.mistral_success %}
+                                    <span class="status-pill status-pill-yes">&check; YES</span>
+                                {% elif extraction_meta.mistral_attempted %}
+                                    <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
+                                {% else %}
+                                    <span class="status-pill status-pill-neutral">N/A</span>
+                                {% endif %}
                             {% else %}
-                                &mdash;
+                                <span class="status-pill status-pill-neutral">Awaiting Upload</span>
                             {% endif %}
-                        </span>
+                        </div>
+
+                        <!-- Gemini Status (Optional Secondary) -->
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Gemini Available:</span>
+                            {% if has_gemini_key or (extraction_meta and extraction_meta.gemini_configured) %}
+                                <span class="status-pill status-pill-yes">&check; YES</span>
+                            {% else %}
+                                <span class="status-pill status-pill-no">&cross; NO</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Gemini Attempted:</span>
+                            {% if extraction_meta %}
+                                {% if extraction_meta.gemini_attempted %}
+                                    <span class="status-pill status-pill-yes">&check; YES</span>
+                                {% else %}
+                                    <span class="status-pill status-pill-neutral">NO (Skipped)</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Gemini Successful:</span>
+                            {% if extraction_meta %}
+                                {% if extraction_meta.gemini_success %}
+                                    <span class="status-pill status-pill-yes">&check; YES</span>
+                                {% elif extraction_meta.gemini_attempted %}
+                                    <span class="status-pill status-pill-no">&cross; NO (Failed)</span>
+                                {% else %}
+                                    <span class="status-pill status-pill-neutral">N/A</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                            {% endif %}
+                        </div>
+
+                        <!-- Local OCR Status -->
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Local OCR Always Ready:</span>
+                            <span class="status-pill status-pill-yes">&check; YES (100% Offline)</span>
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Local OCR Attempted:</span>
+                            {% if extraction_meta %}
+                                {% if extraction_meta.local_ocr_attempted %}
+                                    <span class="status-pill status-pill-yes">&check; YES</span>
+                                {% else %}
+                                    <span class="status-pill status-pill-neutral">NO (Not Needed)</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="status-pill status-pill-neutral">Awaiting Upload</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Images Uploaded:</span>
+                            <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_uploaded is defined %}{{ extraction_meta.images_uploaded }}{% else %}&mdash;{% endif %}</span>
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Images Processed:</span>
+                            <span class="telemetry-val">{% if extraction_meta and extraction_meta.images_processed is defined %}{{ extraction_meta.images_processed }}{% else %}&mdash;{% endif %}</span>
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Images Failed:</span>
+                            <span class="telemetry-val">
+                                {% if extraction_meta and extraction_meta.images_failed is defined %}
+                                    {% if extraction_meta.images_failed > 0 %}
+                                        <span style="color: #dc2626; font-weight: bold;">{{ extraction_meta.images_failed }}</span>
+                                    {% else %}
+                                        <span style="color: #16a34a;">0</span>
+                                    {% endif %}
+                                {% else %}
+                                    &mdash;
+                                {% endif %}
+                            </span>
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Processing Time:</span>
+                            <span class="telemetry-val">{% if extraction_meta %}{{ extraction_meta.time_sec }}s{% else %}&mdash;{% endif %}</span>
+                        </div>
+
+                        <div class="telemetry-item">
+                            <span class="telemetry-title">Fallback Reason:</span>
+                            <span class="telemetry-val">
+                                {% if extraction_meta and extraction_meta.fallback_note %}
+                                    {{ extraction_meta.fallback_note }}
+                                {% elif extraction_meta and not extraction_meta.fallback_used %}
+                                    None &mdash; Primary Engine Used
+                                {% else %}
+                                    &mdash;
+                                {% endif %}
+                            </span>
+                        </div>
+
+                        <div class="telemetry-item" style="grid-column: 1 / -1;">
+                            <span class="telemetry-title">Actual Extraction Engine:</span>
+                            {% if extraction_meta %}
+                                <span class="telemetry-engine-val">{{ extraction_meta.engine }}</span>
+                            {% else %}
+                                <span class="telemetry-engine-val">Awaiting Scan</span>
+                            {% endif %}
+                        </div>
                     </div>
 
-                    <div class="telemetry-item" style="grid-column: 1 / -1;">
-                        <span class="telemetry-title">Actual Extraction Engine:</span>
-                        {% if extraction_meta %}
-                            <span class="telemetry-engine-val">{{ extraction_meta.engine }}</span>
-                        {% else %}
-                            <span class="telemetry-engine-val">Awaiting Scan</span>
-                        {% endif %}
-                    </div>
+                    {% if extraction_meta and extraction_meta.fallback_used and extraction_meta.fallback_note %}
+                        <div style="margin-top:12px; padding:10px 14px; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px; font-size:13px; color:#1e40af;">
+                            <strong>Provider Fallback Active:</strong> {{ extraction_meta.fallback_note }}
+                        </div>
+                    {% endif %}
                 </div>
 
-                {% if extraction_meta and extraction_meta.fallback_used and extraction_meta.fallback_note %}
-                    <div style="margin-top:12px; padding:10px 14px; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px; font-size:13px; color:#1e40af;">
-                        <strong>Provider Fallback Active:</strong> {{ extraction_meta.fallback_note }}
+                <!-- MOBILE DEDICATED TELEMETRY COMPONENT (Visible on mobile <= 768px, hidden on desktop) -->
+                <div class="mobile-telemetry-view">
+                    <!-- Actual Engine Status Card -->
+                    <div class="mobile-telemetry-active-card">
+                        <div class="active-engine-row">
+                            <span class="active-engine-title">Actual Engine:</span>
+                            <span class="active-engine-pill">{% if extraction_meta %}{{ extraction_meta.engine }}{% else %}Awaiting Scan{% endif %}</span>
+                        </div>
+                        <div class="active-engine-meta-row">
+                            <div><span>Processing Time:</span> <strong>{% if extraction_meta %}{{ extraction_meta.time_sec }}s{% else %}&mdash;{% endif %}</strong></div>
+                            <div><span>Views Processed:</span> <strong>{% if extraction_meta and extraction_meta.images_processed is defined %}{{ extraction_meta.images_processed }}/{{ extraction_meta.images_uploaded }}{% else %}&mdash;{% endif %}</strong></div>
+                        </div>
                     </div>
-                {% endif %}
+
+                    <!-- 3-Provider Health Mini Dashboard -->
+                    <div class="mobile-telemetry-matrix">
+                        <div class="matrix-card">
+                            <div class="matrix-name">Mistral OCR</div>
+                            <div class="matrix-status">
+                                {% if has_mistral_key or (extraction_meta and extraction_meta.mistral_configured) %}
+                                    <span class="matrix-badge green">&check; Configured</span>
+                                {% else %}
+                                    <span class="matrix-badge red">&cross; Not Set</span>
+                                {% endif %}
+                            </div>
+                            <div class="matrix-sub">{% if extraction_meta and extraction_meta.mistral_success %}Success{% elif extraction_meta and extraction_meta.mistral_attempted %}Failed{% else %}Standby{% endif %}</div>
+                        </div>
+
+                        <div class="matrix-card">
+                            <div class="matrix-name">Gemini Vision</div>
+                            <div class="matrix-status">
+                                {% if has_gemini_key or (extraction_meta and extraction_meta.gemini_configured) %}
+                                    <span class="matrix-badge green">&check; Ready</span>
+                                {% else %}
+                                    <span class="matrix-badge gray">Optional</span>
+                                {% endif %}
+                            </div>
+                            <div class="matrix-sub">{% if extraction_meta and extraction_meta.gemini_success %}Success{% elif extraction_meta and extraction_meta.gemini_attempted %}Failed{% else %}Standby{% endif %}</div>
+                        </div>
+
+                        <div class="matrix-card">
+                            <div class="matrix-name">Local OCR</div>
+                            <div class="matrix-status">
+                                <span class="matrix-badge green">&check; 100% Offline</span>
+                            </div>
+                            <div class="matrix-sub">{% if extraction_meta and extraction_meta.local_ocr_attempted %}Used{% else %}Standby{% endif %}</div>
+                        </div>
+                    </div>
+
+                    <!-- Collapsible Diagnostic Details & Fallback Information -->
+                    <details class="mobile-telemetry-details">
+                        <summary class="mobile-telemetry-summary">&#128295; View Diagnostic Details &amp; Fallbacks</summary>
+                        <div class="mobile-telemetry-details-body">
+                            <div class="telemetry-detail-row">
+                                <span>Provider Cascade:</span>
+                                <strong>Mistral (Primary) &rarr; Gemini &rarr; Local OCR</strong>
+                            </div>
+                            <div class="telemetry-detail-row">
+                                <span>Fallback Reason:</span>
+                                <strong>{% if extraction_meta and extraction_meta.fallback_used %}{{ extraction_meta.fallback_note }}{% elif extraction_meta %}None &ndash; Primary Engine Used{% else %}Awaiting Scan{% endif %}</strong>
+                            </div>
+                            <div class="telemetry-detail-row">
+                                <span>Images Failed:</span>
+                                <strong>{% if extraction_meta and extraction_meta.images_failed is defined %}{{ extraction_meta.images_failed }}{% else %}0{% endif %}</strong>
+                            </div>
+                            <div class="telemetry-detail-row">
+                                <span>Zero-Key Architecture:</span>
+                                <span style="color:#16a34a; font-weight:700;">&check; Zero API Keys in Client / DOM</span>
+                            </div>
+                        </div>
+                    </details>
+                </div>
             </section>
 
         </main>
@@ -863,13 +1140,23 @@
         <footer class="app-footer">
             <div class="footer-container">
                 <div class="footer-left">
-                    &copy; 2026 <strong>scan2sure</strong> | <strong>SIH26034</strong> &ndash; Legal Metrology Compliance System
+                    &copy; 2026 <strong>scan2sure</strong> &ndash; Legal Metrology Compliance System
                 </div>
                 <div class="footer-tagline">
                     SCAN &bull; VERIFY &bull; TRUST
                 </div>
                 <div class="footer-right">
                     Directorate of Legal Metrology &bull; Ministry of Consumer Affairs
+                </div>
+            </div>
+
+            <!-- MOBILE ONLY FOOTER (Hidden on desktop) -->
+            <div class="mobile-footer-content">
+                <div class="mobile-footer-tagline">SCAN &bull; VERIFY &bull; TRUST</div>
+                <div class="mobile-footer-brand">scan2sure</div>
+                <div class="mobile-footer-system">Legal Metrology Compliance System</div>
+                <div class="mobile-footer-ministry">
+                    Directorate of Legal Metrology<br>&bull; Ministry of Consumer Affairs
                 </div>
             </div>
         </footer>
@@ -975,6 +1262,49 @@
 </div>
 
 <script>
+    // Mobile Drawer Navigation Functions
+    function toggleMobileNav() {
+        const drawer = document.getElementById('mobile_nav_drawer');
+        const backdrop = document.getElementById('mobile_nav_backdrop');
+        const btn = document.getElementById('mobile_hamburger_btn');
+        if (drawer && backdrop) {
+            const isOpen = drawer.classList.contains('open') || drawer.classList.contains('active');
+            if (isOpen) {
+                closeMobileNav();
+            } else {
+                drawer.classList.add('open');
+                drawer.classList.add('active');
+                backdrop.classList.add('open');
+                backdrop.classList.add('active');
+                if (btn) btn.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    }
+
+    function closeMobileNav() {
+        const drawer = document.getElementById('mobile_nav_drawer');
+        const backdrop = document.getElementById('mobile_nav_backdrop');
+        const btn = document.getElementById('mobile_hamburger_btn');
+        if (drawer) {
+            drawer.classList.remove('open');
+            drawer.classList.remove('active');
+        }
+        if (backdrop) {
+            backdrop.classList.remove('open');
+            backdrop.classList.remove('active');
+        }
+        if (btn) btn.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMobileNav();
+            closeReviewModal();
+        }
+    });
+
     // Review Modal Functions
     function openReviewModal() {
         const m = document.getElementById('review_edit_modal');
